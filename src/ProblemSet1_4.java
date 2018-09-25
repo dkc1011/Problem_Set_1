@@ -6,9 +6,10 @@ public class ProblemSet1_4 {
         int nameLength = getNameLength(name);
         String nameUpperCase = nameToUpper(name);
         char firstInitial = getFirstInitial(name);
+        String surname = getSurname(name);
 
         JOptionPane.showMessageDialog(null,"Name: " + nameUpperCase + "\nNumber of Characters: " + nameLength
-                + "\nFirst name initial: " + firstInitial, "Name information!", JOptionPane.INFORMATION_MESSAGE);
+                + "\nFirst name initial: " + firstInitial + "\nSurname: " + surname, "Name information!", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static String getName()
@@ -29,5 +30,10 @@ public class ProblemSet1_4 {
     private static char getFirstInitial(String n)
     {
         return n.charAt(0);
+    }
+
+    private static String getSurname(String n) {
+        String surname = new String(n);
+        return surname.substring(surname.lastIndexOf(" ", 20) + 1);
     }
 }
